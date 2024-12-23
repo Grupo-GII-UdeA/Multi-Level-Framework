@@ -15,7 +15,7 @@ Gómez, D., García, E.F., Aristizábal, E., Vega, J., Ospina, M., Arregocés, H
 > Note: The final citation may change upon formal publication.
 
 ## How to Use
-Detailed instructions on how to install and use the code will be provided in this section soon.
+Detailed instructions on how to use the code will be provided in this section soon.
 
 ## Contact
 For questions or feedback, please contact: gii.grupoudea@gmail.com.
