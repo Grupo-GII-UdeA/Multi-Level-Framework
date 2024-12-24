@@ -42,7 +42,7 @@ The script is structured as follows:
    - A CHIRPS grid file for the Andean zone is uploaded, defining the areas where the model will be applied. Grid cells are assigned unique IDs for better processing of rainfall data and delimitation of areas of interest.  
    - Users upload the area of interest for graphical visualization.  
    - Output: A graph like this:  
-     *(Insert graph here)*  
+     ![Level 1 landslide prediction](images/nivel1_chirps.png) 
 
 - **Level 2 (Lines 183–457)**:  
    - The process is similar to Level 1 but uses different types of data.  
@@ -50,7 +50,8 @@ The script is structured as follows:
    - Interpolation methods (IDW or splines) are applied to provide spatial predictions across the area of interest, not just at the rain gauge points.  
      - Note: Splines interpolation requires at least three measurement points.  
    - Output: Probability of rainfall-triggered landslides is displayed, with graphs like these:  
-     *(Insert graphs here)*  
+     ![Level 2 landslide prediction IDW](images/nivel2_IDW.png) 
+     ![Level 2 landslide prediction Splines](images/nivel2_splines.png) 
 
 - **Level 3 (Lines 457–799)**:  
    - This level requires hourly data (or finer temporal resolution).  
@@ -60,10 +61,11 @@ The script is structured as follows:
      2. Fine soils with sand and coarse materials during rainy periods.  
      3. Fine soils during rainy periods.  
    - Output:  
-     - Probability of landslides is visualized in a graph:  
-       *(Insert graph here)*  
+     - Probability of landslides is visualized in a graph (with IDW interpolation):  
+      ![Level 3 landslide prediction Splines](images/nivel3_landslide.jpg)   
      - Two additional graphs are generated for the defined thresholds:  
-       *(Insert threshold graphs here)*  
+       ![Level 3 empirical rainfall threshold 24hs](images/nivel3_24hs.jpg)
+       ![Level 3 empirical rainfall threshold 30days](images/nivel3_30dias.jpg)  
 
 
 ## Contact
