@@ -65,6 +65,7 @@ The script is structured as follows:
       ![Level 3 landslide prediction Splines](images/nivel3_landslide.jpg)   
      - Two additional graphs are generated for the defined thresholds:  
        ![Level 3 empirical rainfall threshold 24hs](images/nivel3_24hs.jpg)
+       
        ![Level 3 empirical rainfall threshold 30days](images/nivel3_30dias.jpg)  
 
 
