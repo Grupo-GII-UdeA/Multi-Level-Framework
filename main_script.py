@@ -71,6 +71,7 @@ chirps_model= pickle.load(open(chirps_model_file, 'rb'))
   # ... 2-rain ant.rain (float64), 3-rain ant.rain (float64), 15-rain ant.rain (float64), 30-rain ant.rain (float64)
 
 #Upload rainfall file for Chirps
+#Used file = chirps_test_medellin_sanantoprado2022713
 archivo_lluvia = files.upload()
 
 def cargar_archivo(nombre_archivo):
@@ -116,12 +117,13 @@ y_pred_prob33p =y_pred_prob2p[:, 1]
 df_chirps['prob_ep']=y_pred_prob33p
 
 #Upload the region of interest in shapefile format (Grid chirps)
-
+#Used file = cuadricula_chirps_andina.shp (upload all the files of the folder)
 shapefile_archivo = files.upload()
 
 #Read the file and insert the name in the argument
 region_coordenadas = gpd.read_file('cuadricula_chirps_andina.shp')
 
+#Used file = medellin2.shp (upload all the files of the folder)
 #Define the region limit with shapefile format
 uploaded=files.upload()
 
@@ -197,6 +199,7 @@ ideam_model= pickle.load(open(ideam_model_file, 'rb'))
   # codigo (int64) , data (datetime64 exm: 7/13/2022  12:00:00 AM ), daily rain (float64), 1-rain ant.rain (float64),...
   # ... 2-rain ant.rain (float64), 3-rain ant.rain (float64), 15-rain ant.rain (float64), 30-rain ant.rain (float64)
 
+#Used file = ideam_test_medellin_sanantprado2022713
 archivo_lluvia_l2 = files.upload()
 
 #Extract file content
@@ -232,14 +235,14 @@ y_pred_prob33p_2 =y_pred_prob2p_2[:, 1]
 df_lluvia_l2['prob_ep']=y_pred_prob33p_2
 
 #Insert shapefile of rainfall gauges for the andean zone
-
+#Used file =CNE_IDEAM_andeanregion_figprob.shp (upload all the files of the folder)
 shapefile_archivo_l2 = files.upload()
 
-#Read the shapefil (insert shp file name inside the argumen)
-
+#Read the shapefile (insert shp file name inside the argument)
 region_coordenadas_l2 = gpd.read_file('CNE_IDEAM_andeanregion_figprob.shp')
 
 #Insert shapefile of area of interest
+#Used file = medellin2.shp (upload all the files of the folder)
 uploaded=files.upload()
 
 #Read the region limit, area of interest
@@ -462,6 +465,7 @@ In this level is possible to visualize Empirical Rainfall Thresholds"""
     #...fecha_hora(provided in hours or minutes exm:11/1/2024  00:02 ),P1(precipitation values in mm), Codigo (ID of raingauge)
 
 #Upload precipitation file for level 3
+#Used file = prueba_pp_nivel3_3
 archivo_lluvia_l3 = files.upload()
 
 #Extract file content
@@ -571,19 +575,18 @@ y_pred_prob33p_3 =y_pred_prob2p_3[:, 1]
 df_lluvia_l3['prob_ep']=y_pred_prob33p_3
 
 #Insert shapefile of rainfall gauges for the area of interest in andean zone
-
+#Used file = CNE_mod.shp (Upload all the files of the folder)
 shapefile_archivo_l3 = files.upload()
 
 #Read shapefile (insert shp file inside the argument)
 region_coordenadas_l3 = gpd.read_file('CNE_mod.shp')
 
 #Insert shapefile of area of interest for level 3
+#Used file = barrio_sanantprado (Upload all the files of the folder)
 uploaded=files.upload()
 
 #Read the region limit, area of interest
 limite_region_l3= gpd.read_file('barrio_sanantprado.shp')
-
-#merge probability ocrurrences with shapefile region
 
 #Merge probability occurrences with shapefile region
 df_prob_lluvia_l3= pd.merge(region_coordenadas_l3,df_lluvia_l3,how="left",left_on=['codigo_1'],right_on=['codigo'])
